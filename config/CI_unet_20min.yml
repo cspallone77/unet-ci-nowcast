@@ -1,0 +1,40 @@
+seed: 77
+verbose: 0
+save_loc: '/storage/group/sjg213/default/cps5892/U-Net/unets_saved/' ## update with path to save weights
+labels_path: '/storage/group/sjg213/default/cps5892/U-Net/training_files_full/' ## update with path to GOES-16 + MRMS labels
+predictors_path: '/storage/group/sjg213/default/cps5892/U-Net/training_files_full/'  ## update with path to GOES-16 predictors
+weights_fname: 'unet_20min.pth' ## update with your desired weights name
+scaler_fname: 'scaler_UNet_20min.bin' ## update with your desired scaler name
+train_size: 0.90
+metric: "val_loss"
+direction: "min"
+device: "cuda"
+
+model:
+    activation: null ## softmax should be applied in inference from the raw logits
+    encoder_name: "resnet34"
+    encoder_weights: null
+    encoder_depth: 3
+    decoder_channels: [64, 32, 16]
+    in_channels: 10
+    classes: 4
+    epochs: 75
+    batch_size: 16
+    loss_weights: [0.80183491, 0.02936684, 0.02877895, 0.14001929] ## these are based on the inv. sqr. root frequency of the training labels
+    decoder_attention_type: "scse"
+    decoder_interpolation: "bilinear"
+    decoder_use_norm: "batchnorm"
+    loss: "crossentropy"
+    lr: 0.0012896797919958567
+
+scaler_type: "standard" # standard, robust, minmax, quantile, quantile-uniform
+
+callbacks:
+    ReduceLROnPlateau:
+        monitor: "val_loss"
+        factor: 0.1
+        patience: 3
+        min_lr: 1e-9
+        mode: "min"
+        verbose: 0
+    
