@@ -23,13 +23,13 @@ This directory contains several scripts for training, model creation, evaluation
 
 Download the following packages to run this code:
 
-Python 3.x 
-PyTorch
-Xarray
-SciPy
-NumPy 
-scikit-learn
-Pandas
+- Python 3.x 
+- PyTorch
+- Xarray
+- SciPy
+- NumPy 
+- scikit-learn
+- Pandas
 
 # How to Run 
 
