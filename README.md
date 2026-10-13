@@ -30,8 +30,6 @@ Download the following packages to run this code:
 - scikit-learn
 - Pandas
 
-# How to Run 
-
 # References
 
 TBD
