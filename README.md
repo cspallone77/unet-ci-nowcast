@@ -2,6 +2,7 @@
 Assessment of a Multiclass U-Net Segmentation Model for Probabilistic Convective Initiation Nowcasting
 
 # Description
+This repository contains scripts and notebooks that walk through the training, configuration, inference, and evaluation of the multiclass U-Net system. The provided content gives a useful starting point to work with and acquire model output data. Model training details for each lead time system are provided in the `confg` folder. A detailed breakdown of each script is given below.
 
 # Repository Structure
 
